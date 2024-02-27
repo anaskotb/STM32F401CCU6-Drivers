@@ -36,6 +36,14 @@ void main (void)
 
 			if (Button1_Status==LOW)
 			{
+				if(j==9 && i==9){
+					SEVEN_SEGMENT_voidClearDisplay(GPIOA,FIRST);
+					SEVEN_SEGMENT_voidClearDisplay(GPIOB,FIRST);
+					SEVEN_SEGMENT_voidDisplay(GPIOA,FIRST,i);
+					SEVEN_SEGMENT_voidDisplay(GPIOB,FIRST,j);
+				}
+			else
+			    {
 
 				i++;
 				SEVEN_SEGMENT_voidClearDisplay(GPIOA,FIRST);
@@ -43,7 +51,8 @@ void main (void)
 				SEVEN_SEGMENT_voidDisplay(GPIOA,FIRST,i);
 				SEVEN_SEGMENT_voidDisplay(GPIOB,FIRST,j);
 
-				if(i>9){
+				if(i>9)
+				{
 
 					j++;
 					i=0;
@@ -54,6 +63,7 @@ void main (void)
 					SEVEN_SEGMENT_voidDisplay(GPIOB,FIRST,j);
 
 				}
+			}
 
 			}
 			else if (Button2_Status==LOW)
